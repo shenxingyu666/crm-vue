@@ -1,24 +1,72 @@
+import supplier from "@/api/supplier"
+
 export default {
     name: "index",
     data() {
         return {
-            tableData: [{
-                date: '2016-05-02',
-                name: '石克溜',
-                address: '上海市普陀区金沙江路 1517 弄'
-            }, {
-                date: '2016-05-04',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1517 弄'
-            }, {
-                date: '2016-05-01',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1519 弄'
-            }, {
-                date: '2016-05-03',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1516 弄'
-            }]
+            tableData: [],
+            currentPage:1,
+            pageSize:5,
+            total:0,
+            editDialog:false,
+            delDialog:false,
+            formData:{},
+            ids:[]
         }
+    },
+
+    created(){
+        this.findAll();
+    },
+
+    methods:{
+
+        async findAll(){
+            let response=await supplier.findAll(this.currentPage,this.pageSize)
+             this.tableData=response.list
+             this.total=response.total
+        },
+
+        //修改和删除
+        async addOrEdit(){
+            if(this.formData.id){
+                await supplier.updateEntity(this.formData)
+            }else {
+                await supplier.addEntity(this.formData)
+            }
+            this.findAll()
+        },
+
+        pageChange(page){
+            this.currentPage=page
+            this.findAll()
+        },
+
+        async findById(id){
+            let response=await supplier.findById(id)
+            this.formData = response
+        },
+
+        selectionChangeListenter(selection){
+            this.ids=[]
+            selection.forEach(item=>this.ids.push(item.id))
+            console.log(this.ids);
+        },
+
+        async deleteByIds(){
+            if (this.ids.length == 0) {
+                this.$notify.error({
+                    title: '错误',
+                    message: '请选中要删除的内容'
+                });
+            } else {
+                // this.$refs.multipleTable.clearSelection();
+                await  supplier.deleteEntity(this.ids);
+                this.findAll();
+            }
+
+        }
+
+
     }
 }
