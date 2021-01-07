@@ -52,7 +52,14 @@
             </el-aside>
             <el-container>
                 <el-header>Header</el-header>
-                <el-main>Main</el-main>
+                <el-main>
+
+                    <div class="main-body">
+                        
+                    <router-view/>
+                    </div>
+
+                </el-main>
             </el-container>
         </el-container>
     </div>
@@ -103,10 +110,21 @@
         background-color: #E9EEF3;
         color: #333;
         text-align: center;
+        padding: 0;
+        overflow: hidden;
+
     }
 
     .el-container {
         height: 100%;
+
+    }
+
+    .main-body{
+        background-color: white;
+        height: 100%;
+        margin: 10px 0px 0px 10px;
+        padding: 20px 0px 0px 20px;
     }
 
     /*.scrollbar{*/
