@@ -9,7 +9,7 @@
                     <span>不睡觉管理系统</span>
                 </div>
 
-                <!--<el-scrollbar class="scrollbar">-->
+                <el-scrollbar>
                 <el-menu
                         default-active="1"
                         class="el-menu-vertical-demo">
@@ -48,14 +48,14 @@
                     </el-menu-item>
 
                 </el-menu>
-                <!--</el-scrollbar>-->
+                </el-scrollbar>
             </el-aside>
             <el-container>
                 <el-header>Header</el-header>
                 <el-main>
 
                     <div class="main-body">
-                        
+
                     <router-view/>
                     </div>
 
@@ -65,70 +65,12 @@
     </div>
 </template>
 
-<script>
-    export default {
-        name: "main"
-    }
-</script>
+<!--<script src="./index.js">-->
+<!--</script>-->
 
-<style scoped lang="less">
-    .main-box {
-        height: 100%;
-    }
-    .el-header {
-        background-color: #F56C6C;
-        color: #fff;
-        text-align: center;
-        line-height: 60px;
-    }
 
-    .el-aside {
-        background-color: #fff;
-        color: #444;
-    }
 
-    .tittle-wrapper{
-        line-height: 60px;
-        background-color: #F56C6C;
-    }
+<style lang="less" src="./index.less">
 
-    .tittle-wrapper img{
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        vertical-align: middle;
-        margin: 0 8px 0px 10px;
-    }
-
-    .tittle-wrapper span{
-        font-weight: 700;
-        color: white;
-        font-size: 18px;
-    }
-
-    .el-main {
-        background-color: #E9EEF3;
-        color: #333;
-        text-align: center;
-        padding: 0;
-        overflow: hidden;
-
-    }
-
-    .el-container {
-        height: 100%;
-
-    }
-
-    .main-body{
-        background-color: white;
-        height: 100%;
-        margin: 10px 0px 0px 10px;
-        padding: 20px 0px 0px 20px;
-    }
-
-    /*.scrollbar{*/
-        /*height: calc(100% - 60px);*/
-    /*}*/
 
 </style>
