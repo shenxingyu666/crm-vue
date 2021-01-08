@@ -30,6 +30,24 @@ const routes = [
                 name: 'supplier',
                 component: () => import('../views/supplier/index.vue')
             },
+
+            {
+                path: 'brand',
+                name: 'brand',
+                component: () => import('../views/brand/index.vue')
+            },
+
+            {
+                path: 'category',
+                name: 'category',
+                component: () => import('../views/category/index.vue')
+            },
+
+            {
+                path: 'good',
+                name: 'good',
+                component: () => import('../views/good/index.vue')
+            },
         ]
     }
 ]
