@@ -11,38 +11,39 @@
 
                 <el-scrollbar>
                 <el-menu
-                        default-active="1"
+                        :default-active="this.$router.path" router
                         class="el-menu-vertical-demo">
 
-                    <el-menu-item index="1">
+                    <el-menu-item index="main">
                         <i class="el-icon-menu"></i>
                         <span slot="title">系统首页</span>
                     </el-menu-item>
 
-                    <el-submenu index="2">
+                    <el-submenu index="main">
                         <template slot="title">
                             <i class="el-icon-location"></i>
                             <span>商品相关</span>
                         </template>
 
-                        <el-menu-item index="2-1">
+                        <el-menu-item index="brand">
                             <i class="el-icon-menu"></i>
                             <span slot="title">品牌管理</span>
                         </el-menu-item>
 
-                        <el-menu-item index="2-2">
+                        <el-menu-item index="category">
                             <i class="el-icon-menu"></i>
                             <span slot="title">分类管理</span>
                         </el-menu-item>
 
-                        <el-menu-item index="2-3">
+                        <el-menu-item index="good">
                             <i class="el-icon-menu"></i>
                             <span slot="title">商品管理</span>
                         </el-menu-item>
 
                     </el-submenu>
 
-                    <el-menu-item index="3">
+
+                    <el-menu-item index="supplier">
                         <i class="el-icon-menu"></i>
                         <span slot="title">运营商管理</span>
                     </el-menu-item>

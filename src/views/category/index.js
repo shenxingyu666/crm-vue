@@ -28,7 +28,6 @@ export default {
             let response=await category.getTreeData()
             this.tableData=response
             this.treeData=response
-            console.log(this.treeData);
             // this.categoryTreeAddLabel(this.treeData)
         },
 
@@ -56,6 +55,7 @@ export default {
         async findById(id){
             let response=await category.findById(id)
             this.formData = response
+
         },
 
         // selectionChangeListenter(selection){
