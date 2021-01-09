@@ -30,11 +30,44 @@ const routes = [
                 name: 'supplier',
                 component: () => import('../views/supplier/index.vue')
             },
+
             {
-                path: '/order',
-                name: 'order',
-                component: () => import('../views/order/index.vue')
+                path: 'brand',
+                name: 'brand',
+                component: () => import('../views/brand/index.vue')
             },
+
+            {
+                path: 'category',
+                name: 'category',
+                component: () => import('../views/category/index.vue')
+            },
+
+            {
+                path: 'good',
+                name: 'good',
+                component: () => import('../views/good/index.vue')
+            },
+
+            {
+                path: 'freebie',
+                name: 'freebie',
+                component: () => import('../views/freebie/index.vue')
+            },
+
+            {
+                path: 'freebieToGood',
+                name: 'freebieToGood',
+                component: () => import('../views/freebieToGood/index.vue')
+            },
+
+            {
+                path: 'goodToFreebie',
+                name: 'goodToFreebie',
+                component: () => import('../views/goodToFreebie/index.vue')
+            },
+
+
         ]
     }
 ]
