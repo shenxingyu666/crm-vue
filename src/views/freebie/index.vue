@@ -36,67 +36,67 @@
 
                 <el-table-column
                         align="center"
-                        prop="goodName"
+                        prop="freebieName"
                         show-overflow-tooltip
-                        label="商品名称">
+                        label="赠品名称">
                 </el-table-column>
 
                 <el-table-column
                         align="center"
-                        prop="goodCategoryId"
+                        prop="freebieCategoryId"
                         show-overflow-tooltip
-                        label="商品分类id">
+                        label="赠品分类id">
                 </el-table-column>
 
                 <el-table-column
                         align="center"
-                        prop="goodBrandId"
+                        prop="freebieBrandId"
                         show-overflow-tooltip
-                        label="商品品牌id">
+                        label="赠品品牌id">
                 </el-table-column>
 
                 <el-table-column
                         align="center"
-                        prop="goodModelNum"
+                        prop="freebieModelNum"
                         show-overflow-tooltip
-                        label="商品型号">
+                        label="赠品型号">
                 </el-table-column>
 
                 <el-table-column
                         align="center"
-                        prop="goodSupplierId"
+                        prop="freebieSupplierId"
                         show-overflow-tooltip
-                        label="运营商id">
+                        label="赠品商id">
                 </el-table-column>
 
                 <el-table-column
                         align="center"
-                        prop="goodDesc"
+                        prop="freebieDesc"
                         show-overflow-tooltip
-                        label="商品描述">
-                </el-table-column>
-
-
-                <el-table-column
-                        align="center"
-                        prop="goodColor"
-                        show-overflow-tooltip
-                        label="商品颜色">
+                        label="赠品描述">
                 </el-table-column>
 
 
                 <el-table-column
                         align="center"
-                        prop="goodPrice"
+                        prop="freebieColor"
                         show-overflow-tooltip
-                        label="商品价格">
+                        label="赠品颜色">
+                </el-table-column>
+
+
+                <el-table-column
+                        align="center"
+                        prop="freebiePrice"
+                        show-overflow-tooltip
+                        label="赠品价格">
                 </el-table-column>
 
                 <el-table-column
                         align="center"
-                        prop="goodNum"
+                        prop="freebieNum"
                         show-overflow-tooltip
-                        label="商品库存">
+                        label="赠品库存">
                 </el-table-column>
 
 
@@ -134,40 +134,40 @@
                 width="40%">
             <el-form ref="form" label-width="100px" size="small">
 
-                <el-form-item label="商品名称">
-                    <el-input v-model="formData.goodName" placeholder=""></el-input>
+                <el-form-item label="赠品名称">
+                    <el-input v-model="formData.freebieName" placeholder=""></el-input>
                 </el-form-item>
 
-                <el-form-item label="商品分类id">
-                    <el-input v-model="formData.goodCategoryId"></el-input>
+                <el-form-item label="赠品分类id">
+                    <el-input v-model="formData.freebieCategoryId"></el-input>
                 </el-form-item>
 
-                <el-form-item label="商品品牌id">
-                    <el-input v-model="formData.goodBrandId"></el-input>
+                <el-form-item label="赠品品牌id">
+                    <el-input v-model="formData.freebieBrandId"></el-input>
                 </el-form-item>
 
-                <el-form-item label="商品型号">
-                    <el-input v-model="formData.goodModelNum"></el-input>
+                <el-form-item label="赠品型号">
+                    <el-input v-model="formData.freebieModelNum"></el-input>
                 </el-form-item>
 
-                <el-form-item label="运营商id">
-                    <el-input v-model="formData.goodSupplierId" placeholder=""></el-input>
+                <el-form-item label="赠品运营商id">
+                    <el-input v-model="formData.freebieSupplierId" placeholder=""></el-input>
                 </el-form-item>
 
-                <el-form-item label="商品描述">
-                    <el-input v-model="formData.goodDesc"></el-input>
+                <el-form-item label="赠品描述">
+                    <el-input v-model="formData.freebieDesc"></el-input>
                 </el-form-item>
 
-                <el-form-item label="商品颜色">
-                    <el-input v-model="formData.goodColor"></el-input>
+                <el-form-item label="赠品颜色">
+                    <el-input v-model="formData.freebieColor"></el-input>
                 </el-form-item>
 
-                <el-form-item label="商品价格">
-                    <el-input v-model="formData.goodPrice"></el-input>
+                <el-form-item label="赠品价格">
+                    <el-input v-model="formData.freebiePrice"></el-input>
                 </el-form-item>
 
-                <el-form-item label="商品库存">
-                    <el-input v-model="formData.goodNum"></el-input>
+                <el-form-item label="赠品库存">
+                    <el-input v-model="formData.freebieNum"></el-input>
                 </el-form-item>
 
             </el-form>

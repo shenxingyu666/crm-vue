@@ -20,36 +20,90 @@
                     border
                     tooltip-effect="light"
                     :data="tableData"
-                    row-key="id"
-                    :tree-props="{children: 'children'}"
+                    @selection-change="selectionChangeListenter"
                     style="width: 100%">
+                <el-table-column
+                        align="center"
+                        type="selection"
+                        width="55">
+                </el-table-column>
 
                 <el-table-column
                         align="center"
                         prop="id"
-                        label="id"
-                        width="180">
+                        label="id">
                 </el-table-column>
 
                 <el-table-column
                         align="center"
-                        prop="categoryName"
+                        prop="freebieId"
                         show-overflow-tooltip
-                        label="分类名称">
+                        label="赠品id">
                 </el-table-column>
 
                 <el-table-column
                         align="center"
-                        prop="categoryDesc"
+                        prop="freebieName"
                         show-overflow-tooltip
-                        label="分类描述">
+                        label="赠品名称">
                 </el-table-column>
 
                 <el-table-column
                         align="center"
-                        prop="parentId"
+                        prop="freebieCategoryId"
                         show-overflow-tooltip
-                        label="父级id">
+                        label="赠品分类id">
+                </el-table-column>
+
+                <el-table-column
+                        align="center"
+                        prop="freebieBrandId"
+                        show-overflow-tooltip
+                        label="赠品品牌id">
+                </el-table-column>
+
+                <el-table-column
+                        align="center"
+                        prop="freebieModelNum"
+                        show-overflow-tooltip
+                        label="赠品型号">
+                </el-table-column>
+
+                <el-table-column
+                        align="center"
+                        prop="freebieSupplierId"
+                        show-overflow-tooltip
+                        label="赠品商id">
+                </el-table-column>
+
+                <el-table-column
+                        align="center"
+                        prop="freebieDesc"
+                        show-overflow-tooltip
+                        label="赠品描述">
+                </el-table-column>
+
+
+                <el-table-column
+                        align="center"
+                        prop="freebieColor"
+                        show-overflow-tooltip
+                        label="赠品颜色">
+                </el-table-column>
+
+
+                <el-table-column
+                        align="center"
+                        prop="freebiePrice"
+                        show-overflow-tooltip
+                        label="赠品价格">
+                </el-table-column>
+
+                <el-table-column
+                        align="center"
+                        prop="freebieNum"
+                        show-overflow-tooltip
+                        label="赠品库存">
                 </el-table-column>
 
 
@@ -67,15 +121,15 @@
         </div>
 
         <div class="page-box">
-            <!--<el-pagination-->
-                    <!--background-->
-                    <!--:current-page=currentPage-->
-                    <!--:page-size=pageSize-->
-                    <!--layout="prev, pager, next"-->
-                    <!--:total=total-->
-                    <!--@current-change="pageChange"-->
-            <!--&gt;-->
-            <!--</el-pagination>-->
+            <el-pagination
+                    background
+                    :current-page=currentPage
+                    :page-size=pageSize
+                    layout="prev, pager, next"
+                    :total=total
+                    @current-change="pageChange"
+            >
+            </el-pagination>
         </div>
 
 
@@ -87,23 +141,10 @@
                 width="40%">
             <el-form ref="form" label-width="100px" size="small">
 
-                <el-form-item label="分类名称">
-                    <el-input v-model="formData.categoryName" placeholder=""></el-input>
-                </el-form-item>
-
-                <el-form-item label="分类描述">
-                    <el-input v-model="formData.categoryDesc"></el-input>
-                </el-form-item>
-
-                <el-form-item label="父级id">
-
-                    <el-input v-model="formData.parentId"></el-input>
-                <!--<treeselect-->
-                        <!--:multiple="true"-->
-                        <!--:options="treeData"-->
-                        <!--placeholder="请选择分类"-->
-                        <!--v-model="formData.id"-->
-                <!--/>-->
+                <el-form-item label="选择赠品">
+                    <el-select v-model="formData.freebieId">
+                        <el-option v-for="(item,index) in freebieForm" :key="index"  :label="item.freebieName" :value="item.id"></el-option>
+                    </el-select>
                 </el-form-item>
 
             </el-form>
