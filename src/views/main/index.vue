@@ -48,6 +48,32 @@
                     </el-menu-item>
 
                 </el-menu>
+                    <el-menu
+                            default-active="1"
+                            class="el-menu-vertical-demo">
+                        <el-submenu index="2">
+                            <template slot="title">
+                                <i class="el-icon-location"></i>
+                                <span>B2C销售订单管理</span>
+                            </template>
+                            <el-menu-item index="3">
+                                <i class="el-icon-menu"></i>
+                                <span slot="title">系统B2C销售订单接收</span>
+                            </el-menu-item>
+                            <el-menu-item index="4">
+                                <i class="el-icon-menu"></i>
+                                <span slot="title">网店订单导入</span>
+                            </el-menu-item>
+                            <el-menu-item index="5">
+                                <i class="el-icon-menu"></i>
+                                <span slot="title">生成销售出库单</span>
+                            </el-menu-item>
+                            <el-menu-item index="6">
+                                <i class="el-icon-menu"></i>
+                                <span slot="title">销售退货单生成</span>
+                            </el-menu-item>
+                        </el-submenu>
+                    </el-menu>
                 </el-scrollbar>
             </el-aside>
             <el-container>
