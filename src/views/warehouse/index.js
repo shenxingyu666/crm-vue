@@ -62,8 +62,7 @@ export default {
 
         selectionChangeListenter(selection) {
             this.ids = []
-            selection.forEach(item => this.ids.push(item.id))
-            console.log(this.ids);
+            selection.forEach(item => this.ids.push(item))
         },
 
         pageChange(page) {
@@ -88,7 +87,77 @@ export default {
             }else {
                 this.$router.push(`/main/warehouseupd/${row.id}`)
             }
+        },
+
+        deleteCheck() {
+            let flag = 0;
+            if(this.ids.length == 0){
+                const h = this.$createElement;
+                this.$notify({
+                    title: '温馨提示',
+                    message: h('i', { style: 'color: red'}, '没选删个屁')
+                });
+            }else {
+                this.ids.forEach(i => {
+                    if(i.approvalStatus == '已审核'){
+                        flag = 1;
+                        const h = this.$createElement;
+                        this.$notify({
+                            title: '温馨提示',
+                            message: h('i', { style: 'color: teal'}, '已审核的单据不可删除')
+                        });
+                        this.$refs.dataTable.clearSelection()
+                        return Promise.reject(false);
+                    }
+                })
+
+                if(flag == 0 && this.ids.length >0){
+                    this.delDialog = true;
+                }
+            }
+        },
+
+        async deleteByIds() {
+            var array = new Array();
+            if(this.ids.length >0){
+                this.ids.forEach( i=> {
+                    array.push(i.id)
+                })
+            }
+            await warehouse.deleteEntity(array)
+            this.findAll()
+        },
+
+        async exportExcel() {
+            await warehouse.exportExcel(this.currentPage,this.pageSize);
         }
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

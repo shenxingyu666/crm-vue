@@ -5,9 +5,10 @@
     <div class="execute-box">
       <el-button-group>
         <el-button size="mini" icon="el-icon-edit" type="primary" @click="formData={},toAdd()">新 建</el-button>
-        <el-button size="mini" icon="el-icon-delete" type="danger" @click="delDialog=true">删 除</el-button>
+        <el-button size="mini" icon="el-icon-delete" type="danger" @click="deleteCheck()">删 除</el-button>
         <el-button size="mini" icon="el-icon-search" type="success" @click="findAll">搜 索</el-button>
-        <el-button size="mini" icon="el-icon-message" type="warning">导 出</el-button>
+        <el-link style="margin-left: 15px" size="mini" icon="el-icon-message" type="warning"
+         href="http://localhost:9000/aftersale/export">导 出</el-link>
       </el-button-group>
     </div>
 
@@ -209,7 +210,7 @@
         title="温馨提示"
         :visible.sync="delDialog"
         width="30%">
-      <span>你确定要删除吗? {{ ids }}</span>
+      <span>你确定要删除吗?</span>
       <!--//editDialog = false,-->
       <span slot="footer" class="dialog-footer">
         <el-button @click="delDialog = false" size="mini">取 消</el-button>
