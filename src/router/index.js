@@ -50,25 +50,29 @@ const routes = [
             },
 
             {
-                path: 'warehouse',
-                name: 'warehouse',
-                component: () => import('../views/warehouse/index.vue')
+                path: 'freebie',
+                name: 'freebie',
+                component: () => import('../views/freebie/index.vue')
             },
+
             {
-                path: 'warehousesee/:id',
-                name: 'warehousesse',
-                component: () => import('../views/warehousesse/index.vue')
+                path: 'freebieToGood',
+                name: 'freebieToGood',
+                component: () => import('../views/freebieToGood/index.vue')
             },
+
             {
-                path: 'warehouseadd',
-                name: 'warehouseadd',
-                component: () => import('../views/warehouseadd/index.vue')
+                path: 'goodToFreebie',
+                name: 'goodToFreebie',
+                component: () => import('../views/goodToFreebie/index.vue')
             },
+
             {
-                path: 'warehouseupd/:id',
-                name: 'warehouseupd',
-                component: () => import('../views/warehouseupd/index.vue')
+                path: '/order',
+                name: 'order',
+                component: () => import('../views/order/index.vue')
             },
+
         ]
     }
 ]

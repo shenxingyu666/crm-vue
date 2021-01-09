@@ -41,13 +41,13 @@ export default {
         },
 
         async conditionQuery() {
-            let response = await  order.conditionQuery();
-            this.form.formData = response;
-            this.tableData = response;
+            await  order.conditionQuery();
+
         },
 
-        async searchPage() {
-           await order.search(this.form);
+        async search() {
+         await order.search(this.form);
+
         }
 
     }
