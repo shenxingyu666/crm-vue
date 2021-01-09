@@ -48,6 +48,27 @@ const routes = [
                 name: 'good',
                 component: () => import('../views/good/index.vue')
             },
+
+            {
+                path: 'warehouse',
+                name: 'warehouse',
+                component: () => import('../views/warehouse/index.vue')
+            },
+            {
+                path: 'warehousesee/:id',
+                name: 'warehousesse',
+                component: () => import('../views/warehousesse/index.vue')
+            },
+            {
+                path: 'warehouseadd',
+                name: 'warehouseadd',
+                component: () => import('../views/warehouseadd/index.vue')
+            },
+            {
+                path: 'warehouseupd/:id',
+                name: 'warehouseupd',
+                component: () => import('../views/warehouseupd/index.vue')
+            },
         ]
     }
 ]

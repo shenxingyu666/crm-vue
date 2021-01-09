@@ -47,6 +47,39 @@
                         <span slot="title">运营商管理</span>
                     </el-menu-item>
 
+                  <el-submenu index="4">
+                    <template slot="title">
+                      <i class="el-icon-copy-document"></i>
+                      <span>返厂出入库管理</span>
+                    </template>
+
+                    <el-menu-item index="4-1">
+                      <i class="el-icon-bangzhu"></i>
+                      <span slot="title">返厂出库管理</span>
+                    </el-menu-item>
+
+                    <el-menu-item index="4-2">
+                      <i class="el-icon-edit-outline"></i>
+                      <span slot="title">返厂出库管理审核</span>
+                    </el-menu-item>
+
+                    <el-menu-item index="4-3">
+                      <i class="el-icon-wallet"></i>
+                      <span slot="title">返厂入库管理</span>
+                    </el-menu-item>
+
+                    <el-menu-item index="4-4">
+                      <i class="el-icon-edit-outline"></i>
+                      <span slot="title">返厂入库管理审核</span>
+                    </el-menu-item>
+
+                    <el-menu-item index="4-5">
+                      <i class="el-icon-loading"></i>
+                      <span slot="title">维修点管理</span>
+                    </el-menu-item>
+
+                  </el-submenu>
+
                 </el-menu>
                 </el-scrollbar>
             </el-aside>
