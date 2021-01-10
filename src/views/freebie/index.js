@@ -1,5 +1,7 @@
 import freebie from "@/api/freebie"
-
+import category from "@/api/category"
+import brand from "@/api/brand"
+import supplier from "@/api/supplier"
 export default {
     name: "index",
     data() {
@@ -11,18 +13,25 @@ export default {
             editDialog:false,
             delDialog:false,
             formData:{},
-            ids:[]
+            ids:[],
+            categoryForm:[],
+            brandForm:[],
+            supplierForm:[],
+            searchPage:{}
         }
     },
 
     created(){
         this.findAll();
+        this.findAllBrand();
+        this.findSupplier();
+        this.findAllCategory()
     },
 
     methods:{
 
         async findAll(){
-            let response=await freebie.findAll(this.currentPage,this.pageSize)
+            let response=await freebie.findAll(this.searchPage,this.currentPage,this.pageSize)
              this.tableData=response.list
              this.total=response.total
         },
@@ -65,6 +74,20 @@ export default {
                 this.findAll();
             }
 
+        },
+        async findAllCategory(){
+            let response=await category.findAllCategory()
+            this.categoryForm = response.list
+        },
+
+        async findAllBrand(){
+            let response=await brand.findAllBrand()
+            this.brandForm = response.list
+        },
+
+        async findSupplier(){
+            let response=await supplier.findAllsupplier()
+            this.supplierForm = response.list
         }
 
 

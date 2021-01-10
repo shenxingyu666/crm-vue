@@ -20,6 +20,9 @@ let brand={
 
     deleteEntity(ids){
         return axios.delete(`brand/${ids}`)
+    },
+    findAllBrand(){
+        return axios.get(`brand/findAllBrand`)
     }
 
 }

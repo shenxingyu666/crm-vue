@@ -1,9 +1,9 @@
 import axios from "../utils/baseAxios"
 let freebie={
 
-    findAll(currentPage,pageSize){
-        return axios.get(`freebie?currentPage=${currentPage}&pageSize=${pageSize}`)
-
+    findAll(searchPage,currentPage,pageSize){
+        // return axios.get(`freebie?currentPage=${currentPage}&pageSize=${pageSize}`)
+        return axios.post(`freebie/findAll?currentPage=${currentPage}&pageSize=${pageSize}`,searchPage)
     },
 
     findById(id){

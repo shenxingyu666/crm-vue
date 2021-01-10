@@ -57,11 +57,10 @@ export default {
                 list,
             }
             Object.assign(this.order,list1)
-            console.log(this.order)
             await warehouse.addOrder(this.order)
         },
 
-        open() {
+         open() {
             this.$confirm('确认保存?', '提示', {
                 confirmButtonText: '确定',
                 cancelButtonText: '取消',
@@ -72,7 +71,8 @@ export default {
                     message: '提交成功!',
                 });
                 this.commit();
-                this.$router.push(`/main/warehouse`)
+                setTimeout(()=>{this.$router.push(`/main/warehouse`)},600)
+
             }).catch(() => {
                 this.$message({
                     type: 'info',

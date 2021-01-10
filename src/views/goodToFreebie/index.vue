@@ -2,6 +2,10 @@
 
     <div class="entity-box">
 
+        <div class="title-box" style="margin: 0 0 20px 20px" >
+            <h1 style="font-size: 30px;font-weight: 700;font-family: 楷体;color: deeppink">商品转赠品管理</h1>
+        </div>
+
         <div class="execute-box">
             <el-button-group>
                 <el-button size="mini" type="danger" @click="editDialog=true,formData={}">新建</el-button>
@@ -9,8 +13,52 @@
             </el-button-group>
         </div>
 
-        <div class="search-box">
+        <div class="search-box" style="margin-top: 20px">
             <!--搜索表单位置-->
+            <el-form size="mini" :model="searchPage" label-width="100px">
+
+                <el-row :gutter="20">
+
+                    <el-col :span="4">
+                        <el-form-item label="名称">
+                            <el-input v-model="searchPage.freebieName"></el-input>
+                        </el-form-item>
+                    </el-col>
+
+                    <el-col :span="4">
+                        <el-form-item label="型号">
+                            <el-input v-model="searchPage.freebieModelNum"></el-input>
+                        </el-form-item>
+                    </el-col>
+
+                    <el-col :span="4">
+                        <el-form-item label="品牌">
+                            <el-select v-model="searchPage.freebieBrandId">
+                                <el-option v-for="(item,index) in brandForm" :key="index"  :label="item.brandName" :value="item.id"></el-option>
+                            </el-select>
+                        </el-form-item>
+                    </el-col>
+
+                    <el-col :span="4">
+                        <el-form-item label="分类">
+                            <el-select v-model="searchPage.freebieCategoryId">
+                                <el-option v-for="(item,index) in categoryForm" :key="index"  :label="item.categoryName" :value="item.id"></el-option>
+                            </el-select>
+                        </el-form-item>
+                    </el-col>
+
+                    <el-col :span="4">
+                        <el-button size="mini" type="danger" @click="findAll">查询</el-button>
+                    </el-col>
+
+
+
+                </el-row>
+
+
+            </el-form>
+
+
         </div>
 
         <div class="table-box">
@@ -34,12 +82,12 @@
                         label="id">
                 </el-table-column>
 
-                <el-table-column
-                        align="center"
-                        prop="goodId"
-                        show-overflow-tooltip
-                        label="赠品id">
-                </el-table-column>
+                <!--<el-table-column-->
+                        <!--align="center"-->
+                        <!--prop="goodId"-->
+                        <!--show-overflow-tooltip-->
+                        <!--label="赠品id">-->
+                <!--</el-table-column>-->
 
                 <el-table-column
                         align="center"
@@ -111,7 +159,7 @@
                         align="center"
                         label="操作">
                     <template v-slot="obj">
-                        <el-button size="mini" type="primary" @click="editDialog=true,findById(obj.row.id)">编辑</el-button>
+                        <!--<el-button size="mini" type="primary" @click="editDialog=true,findById(obj.row.id)">编辑</el-button>-->
 
                         <el-button size="mini" type="danger" @click="delDialog=true,$refs.dataTable.clearSelection(),ids=[],ids.push(obj.row.id)">删除</el-button>
                     </template>

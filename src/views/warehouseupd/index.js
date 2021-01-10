@@ -53,6 +53,7 @@ export default {
                 Id:this.orderId
             }
             Object.assign(this.order,obj)
+            console.log(this.order)
             await warehouse.updateOutOrder(this.order);
             this.$message.success("保存成功")
         }

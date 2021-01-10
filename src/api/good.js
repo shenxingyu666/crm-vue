@@ -1,9 +1,9 @@
 import axios from "../utils/baseAxios"
 let good={
 
-    findAll(currentPage,pageSize){
-        return axios.get(`good?currentPage=${currentPage}&pageSize=${pageSize}`)
-
+    findAll(searchPage,currentPage,pageSize){
+        // return axios.get(`good?currentPage=${currentPage}&pageSize=${pageSize}`)
+       return axios.post(`good/findAll?currentPage=${currentPage}&pageSize=${pageSize}`,searchPage)
     },
 
     findById(id){

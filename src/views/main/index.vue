@@ -42,6 +42,32 @@
 
                     </el-submenu>
 
+                    <el-submenu index="main2">
+                        <template slot="title">
+                            <i class="el-icon-location"></i>
+                            <span>赠品相关</span>
+                        </template>
+
+                        <el-menu-item index="freebie">
+                            <i class="el-icon-menu"></i>
+                            <span slot="title">赠品管理</span>
+                        </el-menu-item>
+
+                        <el-menu-item index="freebieToGood">
+                            <i class="el-icon-menu"></i>
+                            <span slot="title">赠品转商品管理</span>
+                        </el-menu-item>
+
+                        <el-menu-item index="goodToFreebie">
+                            <i class="el-icon-menu"></i>
+                            <span slot="title">商品转赠品管理</span>
+                        </el-menu-item>
+
+
+
+
+
+                    </el-submenu>
 
                     <el-menu-item index="supplier">
                         <i class="el-icon-menu"></i>
@@ -54,12 +80,12 @@
                       <span>返厂出入库管理</span>
                     </template>
 
-                    <el-menu-item index="4-1">
+                    <el-menu-item index="warehouse">
                       <i class="el-icon-bangzhu"></i>
                       <span slot="title">返厂出库管理</span>
                     </el-menu-item>
 
-                    <el-menu-item index="4-2">
+                    <el-menu-item index="warehouseapproval">
                       <i class="el-icon-edit-outline"></i>
                       <span slot="title">返厂出库管理审核</span>
                     </el-menu-item>
