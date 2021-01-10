@@ -60,6 +60,16 @@ const routes = [
                 component: () => import('../views/warehousesse/index.vue')
             },
             {
+                path: 'warehouseapprovalsse/:id',
+                name: 'warehouseapprovalsse',
+                component: () => import('../views/warehouseapprovalsse/index.vue')
+            },
+            {
+                path: 'warehouseapprovaltrace',
+                name: 'warehouseapprovaltrace',
+                component: () => import('../views/warehouseapprovaltrace/index.vue')
+            },
+            {
                 path: 'warehouseadd',
                 name: 'warehouseadd',
                 component: () => import('../views/warehouseadd/index.vue')
@@ -84,6 +94,11 @@ const routes = [
                 path: 'goodToFreebie',
                 name: 'goodToFreebie',
                 component: () => import('../views/goodToFreebie/index.vue')
+            },
+            {
+                path: 'warehouseapproval',
+                name: 'warehouseapproval',
+                component: () => import('../views/warehouseapproval/index.vue')
             },
         ]
     }

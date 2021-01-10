@@ -25,13 +25,12 @@ export default {
     },
 
     methods: {
-
         insurance(id) {
             this.$router.push({
                 name: 'warehouseapprovaltrace',
                 params: {
                     id: id,
-                    url: 'warehouse'
+                    url: 'warehouseapproval'
                 }
             })
         },
@@ -70,32 +69,27 @@ export default {
             this.searchPage.approvalTime2 = '';
         },
 
-        selectionChangeListenter(selection) {
-            this.ids = []
-            selection.forEach(item => this.ids.push(item))
-        },
 
         pageChange(page) {
             this.currentPage = page
             this.findAll()
         },
 
-        findById(id) {
-            this.$router.push(`/main/warehousesee/${id}`)
+
+        toAdd(str) {
+            this.searchPage.approvalStatus = str
+            this.findAll();
+            this.searchPage.approvalStatus = ''
         },
 
-        toAdd() {
-            this.$router.push(`/main/warehouseadd`)
-        },
-
-        updateById(row){
+        findById(row){
             if(row.approvalStatus == '已审核' ){
                 this.$notify.error({
                     title: '错误',
                     message: '已审核不可修改'
                 });
             }else {
-                this.$router.push(`/main/warehouseupd/${row.id}`)
+                this.$router.push(`/main/warehouseapprovalsse/${row.id}`)
             }
         },
 
