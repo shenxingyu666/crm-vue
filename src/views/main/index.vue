@@ -80,12 +80,12 @@
                       <span>返厂出入库管理</span>
                     </template>
 
-                    <el-menu-item index="4-1">
+                    <el-menu-item index="warehouse">
                       <i class="el-icon-bangzhu"></i>
                       <span slot="title">返厂出库管理</span>
                     </el-menu-item>
 
-                    <el-menu-item index="4-2">
+                    <el-menu-item index="warehouseapproval">
                       <i class="el-icon-edit-outline"></i>
                       <span slot="title">返厂出库管理审核</span>
                     </el-menu-item>
