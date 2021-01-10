@@ -25,6 +25,10 @@ let category={
 
     deleteEntity(ids){
         return axios.delete(`category/${ids}`)
+    },
+
+    findAllCategory(){
+        return axios.get(`category/findAllCategory`)
     }
 
 }

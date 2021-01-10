@@ -20,6 +20,9 @@ let supplier={
 
     deleteEntity(ids){
         return axios.delete(`supplier/${ids}`)
+    },
+    findAllsupplier(){
+        return axios.get(`supplier/findAllSupplier`)
     }
 
 }

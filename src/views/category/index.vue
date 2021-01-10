@@ -2,6 +2,11 @@
 
     <div class="entity-box">
 
+        <div class="title-box" style="margin: 0 0 20px 20px" >
+            <h1 style="font-size: 30px;font-weight: 700;font-family: 楷体;color: deeppink">分类管理</h1>
+        </div>
+
+
         <div class="execute-box">
             <el-button-group>
                 <el-button size="mini" type="danger" @click="editDialog=true,formData={}">新建</el-button>
