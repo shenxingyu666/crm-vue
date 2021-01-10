@@ -17,10 +17,8 @@ export default {
             },
             dialogTableVisible: false,
             dialogTableVisibles: false,
-            dialogVisible: false,
             gridDatas: [],
-            gridData: [],
-            ids: []
+            gridData: []
         }
     },
     created() {
@@ -49,28 +47,10 @@ export default {
         },
 
         async search() {
-            let response = await order.search(this.form);
+            let response= await order.search(this.form);
+            console.log(response);
             this.tableData = response;
-        },
-        selectionList(selection) {
-            this.ids = [];
-            selection.forEach(item => this.ids.push(item.id));
-            console.log(this.ids);
-        },
-        async deleteById(){
-
-            if(this.ids.length==0){
-                this.$notify.error({
-                    title:'错误',
-                    message:'请选中要删除的内容',
-                })
-            }else {
-                await order.delete(this.ids);
-                this.findAll();
-            }
-
-        },
-
+        }
 
     }
 }

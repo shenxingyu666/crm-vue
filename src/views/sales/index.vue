@@ -39,7 +39,7 @@
                         <!--style="margin-left: 100px"-->
 
                             <el-button size="mini" type="danger" v-model="form" @click="search">搜索</el-button>
-                            <el-button size="mini" type="danger" @click="dialogTableVisible=true">生成销售出库单</el-button>
+                            <el-button size="mini" type="danger">生成销售出库单</el-button>
 
                     </el-col>
                 </el-row>
@@ -50,7 +50,6 @@
 
         <div class="table-box">
             <el-table
-                    @selection-change="selectionList"
                     :data="tableData"
                     stripe
                     border
@@ -99,8 +98,7 @@
                         label="操作">
                     <template v-slot="obj">
                         <el-button size="mini" type="primary" @click="dialogTableVisible=true ,query(obj.row.id)" >查看</el-button>
-                        <el-button size="mini" type="danger" @click="dialogVisible=true">删除</el-button>
-                        <!--<el-button size="mini" type="primary" @click="dialogTableVisibles=true ,findQuery(obj.row.id)" >查看</el-button>-->
+                        <el-button size="mini" type="primary" @click="dialogTableVisibles=true ,findQuery(obj.row.id)" >查看</el-button>
                     </template>
                 </el-table-column>
 
@@ -116,18 +114,6 @@
             </el-pagination>
         </div>
         <div class="order-box">
-            <el-dialog
-                    title="温馨提示"
-                    :visible.sync="dialogVisible"
-                    width="30%">
-                    <!--:before-close="handleClose">-->
-                <span>你确定要删除吗{{ids}}</span>
-                <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false" size="mini">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false,deleteById(ids)" size="mini">确 定</el-button>
-  </span>
-            </el-dialog>
-
             <el-dialog title="商品详细信息" :visible.sync="dialogTableVisible">
                 <el-table :data="gridData">
                     <el-table-column property="id" label="商品编号" ></el-table-column>
@@ -145,6 +131,7 @@
                     <el-table-column property="consigneeRemarks" label="备注"></el-table-column>
                 </el-table>
             </el-dialog>
+
         </div>
     </div>
 </template>

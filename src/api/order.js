@@ -17,6 +17,9 @@ let order={
     },
     search(form){
         return axios.post(`order/search`,form);
+    },
+    delete(ids){
+        return axios.delete(`order/${ids}`);
     }
 };
 
