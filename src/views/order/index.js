@@ -16,10 +16,12 @@ export default {
                 formData: [],
             },
             dialogTableVisible: false,
+            dialog: false,
             dialogTableVisibles: false,
             dialogVisible: false,
             gridDatas: [],
             gridData: [],
+            grid: [],
             ids: []
         }
     },
@@ -28,6 +30,12 @@ export default {
         this.conditionQuery();
     },
     methods: {
+
+        pages(page) {
+            this.currentPage = page;
+            this.findAll();
+        },
+
         async findAll() {
             let response = await order.findAll(this.currentPage, this.pageSize);
             this.tableData = response.list;
@@ -40,6 +48,11 @@ export default {
         async query(id) {
             let response = await  order.query(id);
             this.gridData = response;
+        },
+
+        async Sales(){
+           let response= await order.Sales(this.ids);
+            this.grid=response;
         },
 
         async conditionQuery() {
@@ -57,14 +70,14 @@ export default {
             selection.forEach(item => this.ids.push(item.id));
             console.log(this.ids);
         },
-        async deleteById(){
+        async deleteById() {
 
-            if(this.ids.length==0){
+            if (this.ids.length == 0) {
                 this.$notify.error({
-                    title:'错误',
-                    message:'请选中要删除的内容',
+                    title: '错误',
+                    message: '请选中要删除的内容',
                 })
-            }else {
+            } else {
                 await order.delete(this.ids);
                 this.findAll();
             }

@@ -69,6 +69,16 @@ const routes = [
                 name: 'warehouseupd',
                 component: () => import('../views/warehouseupd/index.vue')
             },
+            {
+                path: '/order',
+                name: 'order',
+                component: () => import('../views/order/index.vue')
+            },
+            {
+                path: '/sales',
+                name: 'sales',
+                component: () => import('../views/sales/index.vue')
+            },
         ]
     }
 ]

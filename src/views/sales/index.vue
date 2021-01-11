@@ -2,8 +2,8 @@
     <div class="entity-box">
         <div class="execute-box">
             <el-button-group>
-                <!--<el-button size="mini" type="danger">新建</el-button>-->
-                <!--<el-button size="mini" type="danger">删除</el-button>-->
+                <el-button size="mini" type="danger">新建</el-button>
+                <el-button size="mini" type="danger">删除</el-button>
             </el-button-group>
         </div>
         <div class="search-box">
@@ -39,7 +39,7 @@
                         <!--style="margin-left: 100px"-->
 
                             <el-button size="mini" type="danger" v-model="form" @click="search">搜索</el-button>
-                            <el-button size="mini" type="danger">生成销售出库单</el-button>
+                            <!--<el-button size="mini" type="danger">生成销售出库单</el-button>-->
 
                     </el-col>
                 </el-row>
@@ -97,8 +97,9 @@
                         align="center"
                         label="操作">
                     <template v-slot="obj">
+                        <el-button size="mini" type="danger">编辑</el-button>
                         <el-button size="mini" type="primary" @click="dialogTableVisible=true ,query(obj.row.id)" >查看</el-button>
-                        <el-button size="mini" type="primary" @click="dialogTableVisibles=true ,findQuery(obj.row.id)" >查看</el-button>
+                        <!--<el-button size="mini" type="primary" @click="dialogTableVisibles=true ,findQuery(obj.row.id)" >查看</el-button>-->
                     </template>
                 </el-table-column>
 

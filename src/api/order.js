@@ -20,6 +20,9 @@ let order={
     },
     delete(ids){
         return axios.delete(`order/${ids}`);
+    },
+    Sales(ids){
+        return axios.post(`order/${ids}`);
     }
 };
 
